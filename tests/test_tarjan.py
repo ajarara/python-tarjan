@@ -36,6 +36,15 @@ def test_simple():
                 5: [1, 2, 3, 4, 5],
             },
             [{1, 2, 3, 5}, {4}]),
+        GRAPH_SCC_PAIRING(
+            {
+                1: [],
+                2: [],
+                3: [],
+                4: [],
+                5: [1, 2, 3, 4, 5],
+            },
+            [{1}, {2}, {3}, {4}, {5}])
     ]
     for gscc_pair in g:
         assert freeze_then_compare(tarjan(gscc_pair.graph), gscc_pair.scc_set)
